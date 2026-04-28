@@ -1,0 +1,98 @@
+{
+  "name": "cg-open-skills",
+  "version": "0.1.0",
+  "updated": "2026-04-28",
+  "description": "Public, sanitized Agent Skills for content, business diagnosis, meeting notes and knowledge processing.",
+  "distribution": {
+    "primary": "GitHub repository",
+    "domestic_mirror": "static mirror page, planned",
+    "fallback": "Feishu document download page, planned"
+  },
+  "skills": [
+    {
+      "name": "insurance-private-domain-moments",
+      "path": "skills/private-domain/insurance-private-domain-moments/SKILL.md",
+      "category": "private-domain",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "wechat-article-chain-lite",
+      "path": "skills/longform/wechat-article-chain-lite/SKILL.md",
+      "category": "longform",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "cg-content-diagnosis-public",
+      "path": "skills/content-diagnosis/cg-content-diagnosis-public/SKILL.md",
+      "category": "content-diagnosis",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "cg-ai-check-public",
+      "path": "skills/content-diagnosis/cg-ai-check-public/SKILL.md",
+      "category": "content-diagnosis",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "cg-business-diagnosis-lite",
+      "path": "skills/business/cg-business-diagnosis-lite/SKILL.md",
+      "category": "business",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "cg-problem-dissolver",
+      "path": "skills/business/cg-problem-dissolver/SKILL.md",
+      "category": "business",
+      "risk": "low",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "business-insight-public",
+      "path": "skills/business/business-insight-public/SKILL.md",
+      "category": "business",
+      "risk": "medium",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "meeting-notes",
+      "path": "skills/meeting-notes/meeting-notes/SKILL.md",
+      "category": "meeting-notes",
+      "risk": "low",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "client-meeting-notes-public",
+      "path": "skills/meeting-notes/client-meeting-notes-public/SKILL.md",
+      "category": "meeting-notes",
+      "risk": "low",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "kb-processor",
+      "path": "skills/knowledge-processing/kb-processor/SKILL.md",
+      "category": "knowledge-processing",
+      "risk": "low",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "deep-research-public",
+      "path": "skills/research/deep-research-public/SKILL.md",
+      "category": "research",
+      "risk": "low",
+      "status": "public-v0.1"
+    },
+    {
+      "name": "write-article-public",
+      "path": "skills/writing/write-article-public/SKILL.md",
+      "category": "writing",
+      "risk": "medium",
+      "status": "public-v0.1"
+    }
+  ]
+}
+
