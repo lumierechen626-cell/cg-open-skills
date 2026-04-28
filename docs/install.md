@@ -23,7 +23,7 @@ skills/private-domain/insurance-private-domain-moments/
 
 发布页会提供：
 
-- `cg-open-skills-v0.1.0.zip`：全部第一批 Skill。
+- `cg-open-skills-v0.1.1.zip`：全部第一批 Skill。
 - `single-skill-*.zip`：单个 Skill。
 
 解压后按方式 1 复制。

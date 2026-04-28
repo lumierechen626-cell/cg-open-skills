@@ -20,7 +20,7 @@
 /cg-open-skills/
 ├── index.html
 ├── downloads/
-│   ├── cg-open-skills-v0.1.0.zip
+│   ├── cg-open-skills-v0.1.1.zip
 │   └── single/
 ├── manifest.json
 └── changelog.html
@@ -29,7 +29,7 @@
 ## 更新流程
 
 1. 本地生成 zip。
-2. 上传到 43 或 118 服务器的静态目录。
+2. 上传到国内静态镜像目录。
 3. 更新 `manifest.json`。
 4. 飞书文档同步最新下载链接。
 

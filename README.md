@@ -4,14 +4,27 @@
 
 这不是一个课程，也不是一个终端产品。这里放的是一批已经在真实内容生产、商业诊断、会议纪要和资料整理中反复使用过的工作流骨架。公开版只保留通用方法、判断流程和输出结构，不包含私有素材库、真实客户案例、API、服务器配置或内部 SOP。
 
-## 第一批 Skill
+## 拳头候选
+
+第一批不是把所有 Skill 都当主打。当前更适合作为第一屏展示的是这 4 个：
+
+| Skill | 为什么值得先看 |
+|---|---|
+| `cg-ai-check-public` | 高频、好理解，能直接检查 AI 味、解释腔和顾问内容口风 |
+| `cg-business-diagnosis-lite` | 有判断力，不是回答商业问题，而是先拆问题是否成立 |
+| `wechat-article-chain-lite` | 展示从选题到发布态的完整长文链路 |
+| `insurance-private-domain-moments` | 适合顾问、保险人和个人品牌的私域内容生产 |
+
+拳头 Skill 标准见 [docs/flagship-standard.md](docs/flagship-standard.md)。
+
+## 完整清单
 
 | 分类 | Skill | 适合场景 |
 |---|---|---|
 | 私域内容 | `insurance-private-domain-moments` | 保险人 / 顾问的朋友圈内容，覆盖 B 端交付、C 端咨询和价值圈 |
 | 长文链路 | `wechat-article-chain-lite` | 公众号长文从选题到发布态的轻量工作链 |
 | 内容诊断 | `cg-content-diagnosis-public` | 判断一个选题或文案该不该做、怎么做、哪里会写空 |
-| AI 检查 | `cg-ai-check-public` | 检查文案里的 AI 味、解释腔、套路感和过度光滑 |
+| AI 检查 | `cg-ai-check-public` | 检查文案里的 AI 味、解释腔、套路感和过度光滑，含公开版顾问口风 reference |
 | 商业诊断 | `cg-business-diagnosis-lite` | 用问诊方式拆商业问题，而不是直接给答案 |
 | 问题消解 | `cg-problem-dissolver` | 把模糊问题改写成可验证问题 |
 | 商业灵感 | `business-insight-public` | 把零散商业想法沉淀成可讨论记录 |
@@ -29,6 +42,8 @@
 4. 根据你的业务，把 `{你的品牌}`、`{你的行业}`、`{你的用户}` 等占位符替换掉。
 
 详细说明见 [docs/install.md](docs/install.md)。
+
+本轮公开版差异测试见 [docs/skill-parity-test-report-v0.1.1.md](docs/skill-parity-test-report-v0.1.1.md)。
 
 ## 开源边界
 
