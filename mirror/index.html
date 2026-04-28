@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CG Open Skills 国内镜像</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d8dee8;
+      --soft: #f6f8fb;
+      --accent: #1d4ed8;
+      --accent-soft: #e8f0ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+    h1 { font-size: 34px; margin: 0 0 8px; letter-spacing: 0; }
+    h2 { margin: 36px 0 12px; font-size: 22px; }
+    p { margin: 0 0 14px; color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
+    .primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      margin-top: 12px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 650;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: var(--soft);
+    }
+    .item strong { display: block; margin-bottom: 4px; }
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: var(--accent-soft);
+      color: #183a8a;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>CG Open Skills 国内镜像</h1>
+      <p>这是 <code>cg-open-skills</code> 的国内下载镜像。GitHub 是主仓库，这里只提供稳定下载入口。</p>
+      <p>当前版本：<strong>v0.1.0</strong>，包含 12 个公开脱敏版 Skill。</p>
+      <a class="primary" href="./cg-open-skills-v0.1.0.zip">下载全部 Skill</a>
+    </section>
+
+    <h2>单个 Skill 下载</h2>
+    <div class="grid">
+      <div class="item"><strong>insurance-private-domain-moments</strong><a href="./single/insurance-private-domain-moments-v0.1.0.zip">下载朋友圈 Skill</a></div>
+      <div class="item"><strong>wechat-article-chain-lite</strong><a href="./single/wechat-article-chain-lite-v0.1.0.zip">下载长文链条 Lite</a></div>
+      <div class="item"><strong>cg-content-diagnosis-public</strong><a href="./single/cg-content-diagnosis-public-v0.1.0.zip">下载内容诊断</a></div>
+      <div class="item"><strong>cg-ai-check-public</strong><a href="./single/cg-ai-check-public-v0.1.0.zip">下载 AI Check</a></div>
+      <div class="item"><strong>cg-business-diagnosis-lite</strong><a href="./single/cg-business-diagnosis-lite-v0.1.0.zip">下载商业诊断 Lite</a></div>
+      <div class="item"><strong>cg-problem-dissolver</strong><a href="./single/cg-problem-dissolver-v0.1.0.zip">下载问题消解</a></div>
+      <div class="item"><strong>business-insight-public</strong><a href="./single/business-insight-public-v0.1.0.zip">下载商业灵感记录</a></div>
+      <div class="item"><strong>meeting-notes</strong><a href="./single/meeting-notes-v0.1.0.zip">下载会议纪要</a></div>
+      <div class="item"><strong>client-meeting-notes-public</strong><a href="./single/client-meeting-notes-public-v0.1.0.zip">下载客户面谈纪要</a></div>
+      <div class="item"><strong>kb-processor</strong><a href="./single/kb-processor-v0.1.0.zip">下载知识库处理</a></div>
+      <div class="item"><strong>deep-research-public</strong><a href="./single/deep-research-public-v0.1.0.zip">下载深度调研</a></div>
+      <div class="item"><strong>write-article-public</strong><a href="./single/write-article-public-v0.1.0.zip">下载长文写作</a></div>
+    </div>
+
+    <h2>说明文件</h2>
+    <p><a href="./manifest.json">manifest.json</a> 记录版本与文件清单；<a href="./SHA256SUMS.txt">SHA256SUMS.txt</a> 用于校验下载文件。</p>
+    <p>GitHub 主仓库：<a href="https://github.com/lumierechen626-cell/cg-open-skills">https://github.com/lumierechen626-cell/cg-open-skills</a></p>
+
+    <h2>使用提醒</h2>
+    <p>公开版已经脱敏，不包含真实客户案例、私有素材库、本地路径、API Key、Token、Secret 或服务器配置。</p>
+    <p>下载后把对应目录复制到你的 Agent skills 目录，再根据自己的业务替换 <code>{你的品牌}</code>、<code>{你的行业}</code>、<code>{你的用户}</code>。</p>
+
+    <footer>
+      CG Open Skills v0.1.0 · Mirror synced from GitHub release files.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+78acb7fda15e3b4e37343186a96bb478925c45f19290314eea61383716aaa2ad  cg-open-skills-v0.1.0.zip
+027aae6b2c94ff99e83684b8ee84f8b1bc1354c851ad07e2c4c938890af546a8  single/business-insight-public-v0.1.0.zip
+7507fe9711e4e36f7fc86746bc985d68c87d2a6b91a13cefa54e8288c65cbf6c  single/cg-ai-check-public-v0.1.0.zip
+c66b49b5e043c69877e5e12326cfd719f33ade86eae51528946901ea8d226957  single/cg-business-diagnosis-lite-v0.1.0.zip
+51cc3b1a697a490d3674db042b3a7a50d54230dc80dea99d4e1b2ca39a99c4c9  single/cg-content-diagnosis-public-v0.1.0.zip
+ba2fc5a8519d377c24a95571871ffefd81db1a9ec33ced6b9b3bf606cec60b3b  single/cg-problem-dissolver-v0.1.0.zip
+1717991a6e013f06df5fa7ce794e39352c618c5f7ac22e57c559bede79e8cbc0  single/client-meeting-notes-public-v0.1.0.zip
+4295f1b8047fbf1b1d6c8ebea27d7373c84d9a30ceabf448dc9d994757949f6c  single/deep-research-public-v0.1.0.zip
+f68cc159108c65a12d9207c834370511b487a906ee007055fb98d4feace2742f  single/insurance-private-domain-moments-v0.1.0.zip
+6875580aa0ac9111ec27b0462461f2b41b94e0835d3a7be1c5e60a03db16eaa6  single/kb-processor-v0.1.0.zip
+24ad239d98957f572e13d62ba116013bc38d39f233a26cf66aab86afc61d78f4  single/meeting-notes-v0.1.0.zip
+00ba3787c7442d297f52d389e88b1833a018433cfb5cdd3fd70df69a64b6937d  single/wechat-article-chain-lite-v0.1.0.zip
+3610f42a7d8de6c4ce7f773afa9ae8c0233455af5d29a2533264a0532d3840d9  single/write-article-public-v0.1.0.zip

@@ -5,7 +5,8 @@
   "description": "Public, sanitized Agent Skills for content, business diagnosis, meeting notes and knowledge processing.",
   "distribution": {
     "primary": "GitHub repository",
-    "domestic_mirror": "static mirror page, planned",
+    "github": "https://github.com/lumierechen626-cell/cg-open-skills",
+    "domestic_mirror": "https://superbxr.com/downloads/cg-open-skills/",
     "fallback": "Feishu document download page, planned"
   },
   "skills": [
@@ -95,4 +96,3 @@
     }
   ]
 }
-
