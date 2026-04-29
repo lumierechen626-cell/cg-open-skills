@@ -8,7 +8,7 @@
 
 第一版国内镜像部署在：
 
-- `https://superbxr.com/downloads/cg-open-skills/`
+- `https://superbxr.com/cg-open-skills`
 
 该镜像是静态下载页，不新增账号系统，不收集用户数据。
 
