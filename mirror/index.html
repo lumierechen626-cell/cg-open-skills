@@ -4,113 +4,1726 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CG Open Skills 国内镜像</title>
+  <meta name="description" content="CG Open Skills 国内镜像。下载公开脱敏版 Agent Skills，并查看每个 Skill 的用途、适用场景和使用前后效果。">
   <style>
     :root {
       color-scheme: light;
-      --ink: #172033;
-      --muted: #667085;
-      --line: #d8dee8;
-      --soft: #f6f8fb;
-      --accent: #1d4ed8;
-      --accent-soft: #e8f0ff;
+      --bg: #f6f8fb;
+      --bg-warm: #fbfaf7;
+      --surface: #ffffff;
+      --surface-soft: #f8fbff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --subtle: #94a3b8;
+      --line: #e5e7eb;
+      --blue: #123a6f;
+      --blue-dark: #071f3d;
+      --blue-soft: #f1f5fb;
+      --blue-soft-2: #e6edf7;
+      --gold: #b08a3c;
+      --gold-dark: #7f5d19;
+      --gold-soft: #fbf4e4;
+      --gold-line: rgba(176, 138, 60, 0.28);
+      --red: #ef4444;
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-soft: 0 18px 48px rgba(7, 31, 61, 0.07);
+      --shadow-card: 0 14px 34px rgba(7, 31, 61, 0.07);
+      --shadow-gold: 0 16px 38px rgba(176, 138, 60, 0.12);
+      --container: 1440px;
+      --font-display: "Didot", "Bodoni 72", "Songti SC", "STSong", "Noto Serif SC", "Times New Roman", serif;
+      --font-body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: #ffffff;
-      line-height: 1.65;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg-warm);
+      min-height: 100vh;
     }
-    main {
-      width: min(980px, calc(100% - 32px));
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .page {
+      width: min(var(--container), calc(100% - 64px));
       margin: 0 auto;
-      padding: 48px 0 64px;
+      padding: 28px 0 46px;
     }
-    h1 { font-size: 34px; margin: 0 0 8px; letter-spacing: 0; }
-    h2 { margin: 36px 0 12px; font-size: 22px; }
-    p { margin: 0 0 14px; color: var(--muted); }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .hero {
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 28px;
+
+    .nav {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 48px;
     }
-    .primary {
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--blue-dark);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--blue-dark);
+      box-shadow: 0 10px 24px rgba(7, 31, 61, 0.14);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue-dark);
+      background: var(--blue-soft);
+    }
+
+    .nav-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 42px;
       padding: 0 18px;
-      margin-top: 12px;
-      border-radius: 6px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 650;
+      border-radius: 999px;
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-line);
+      font-size: 14px;
+      font-weight: 700;
     }
-    .grid {
+
+    .hero {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
+      grid-template-columns: minmax(0, 1fr) minmax(460px, 0.93fr);
+      gap: 52px;
+      align-items: center;
+      margin-bottom: 56px;
     }
-    .item {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 16px;
-      background: var(--soft);
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+      border: 1px solid var(--gold-line);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
-    .item strong { display: block; margin-bottom: 4px; }
-    code {
-      padding: 2px 5px;
-      border-radius: 4px;
-      background: var(--accent-soft);
-      color: #183a8a;
+
+    .hero h1 {
+      margin: 0;
+      max-width: 790px;
+      font-family: var(--font-display);
+      font-size: 72px;
+      line-height: 1.03;
+      letter-spacing: 0;
+      color: var(--text);
     }
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+
+    .hero h1 span {
+      color: var(--blue);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .hero h1 span::after {
+      content: "";
+      position: absolute;
+      left: 0.04em;
+      right: 0.02em;
+      bottom: 0.03em;
+      height: 0.18em;
+      border-radius: 999px;
+      background: rgba(176, 138, 60, 0.24);
+      z-index: -1;
+    }
+
+    .hero-lead {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: #475569;
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      color: white;
+      background: var(--blue-dark);
+      box-shadow: 0 14px 30px rgba(7, 31, 61, 0.18);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(7, 31, 61, 0.22);
+    }
+
+    .btn.secondary {
+      color: var(--blue-dark);
+      border-color: rgba(15, 42, 95, 0.12);
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .btn.secondary:hover {
+      border-color: rgba(18, 58, 111, 0.28);
+      background: var(--blue-soft);
+    }
+
+    .value-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+      max-width: 780px;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(14px);
+    }
+
+    .value-icon {
+      width: 42px;
+      height: 42px;
+      flex: none;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      background: var(--blue-soft);
+      font-weight: 900;
+    }
+
+    .value-item:nth-child(2) .value-icon {
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+    }
+
+    .value-title {
+      font-weight: 850;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .value-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-demo {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 49.6%, #fffaf0 50%, #ffffff 100%);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-demo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: none;
+      pointer-events: none;
+    }
+
+    .demo-columns {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+
+    .demo-side {
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .demo-side.after { border-left: 1px solid rgba(226, 232, 240, 0.9); }
+
+    .demo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .demo-title small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #f1f5f9;
       color: var(--muted);
       font-size: 14px;
     }
+
+    .demo-side.after .demo-title { color: var(--gold-dark); }
+    .demo-side.after .demo-title small {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .prompt-chip,
+    .enabled-chip {
+      width: fit-content;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.05);
+    }
+
+    .enabled-chip {
+      color: var(--gold-dark);
+      background: var(--gold-soft);
+      border-color: var(--gold-line);
+      font-weight: 800;
+    }
+
+    .output-card {
+      border-radius: 14px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 12px 28px rgba(7, 31, 61, 0.05);
+      color: #334155;
+      line-height: 1.85;
+      min-height: 178px;
+    }
+
+    .demo-side.after .output-card {
+      border-color: rgba(176, 138, 60, 0.33);
+      background: rgba(255, 253, 248, 0.92);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .quality-tag {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 850;
+      background: #f1f5f9;
+      color: var(--muted);
+    }
+
+    .demo-side.after .quality-tag {
+      background: var(--gold-dark);
+      color: white;
+    }
+
+    .hero-arrow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(7, 31, 61, 0.12);
+      color: var(--text);
+      font-size: 26px;
+      font-weight: 900;
+    }
+
+    .section {
+      margin-top: 34px;
+      padding-top: 46px;
+      border-top: 1px solid rgba(226, 232, 240, 0.92);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-dark);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 0;
+      color: var(--text);
+    }
+
+    .section-lead {
+      margin: 0;
+      max-width: 540px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: rgba(18, 58, 111, 0.35);
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.72fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      position: relative;
+      min-height: 276px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 8px 22px rgba(7, 31, 61, 0.04);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .skill-card::after {
+      content: none;
+      position: absolute;
+      right: -42px;
+      top: -42px;
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      background: rgba(18, 58, 111, 0.06);
+      transition: 0.22s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(18, 58, 111, 0.35);
+    }
+
+    .skill-card.active {
+      border-color: rgba(18, 58, 111, 0.88);
+      background: #fffdf8;
+      box-shadow: 0 16px 38px rgba(7, 31, 61, 0.10);
+    }
+
+    .skill-card.active::after { background: rgba(18, 58, 111, 0.12); }
+
+    .checkmark {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: none;
+      place-items: center;
+      background: var(--blue);
+      color: white;
+      z-index: 2;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .skill-card.active .checkmark { display: grid; }
+    .skill-top { position: relative; z-index: 1; }
+
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .skill-card:nth-child(2n) .skill-icon {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .skill-title {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .skill-code {
+      margin: 0 0 10px;
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .skill-summary {
+      margin: 0;
+      min-height: 52px;
+      color: #475569;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .tag-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 9px;
+      border-radius: 9px;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .skill-card:nth-child(2n) .tag {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .skill-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-top: 1px solid rgba(226, 232, 240, 0.92);
+      padding-top: 16px;
+    }
+
+    .card-action,
+    .download-link {
+      border: 0;
+      background: transparent;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 900;
+      text-align: left;
+    }
+
+    .download-link {
+      margin-left: auto;
+      color: var(--gold-dark);
+      white-space: nowrap;
+    }
+
+    .skill-extra {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 8px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.22s ease, opacity 0.18s ease, margin 0.18s ease;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .skill-card:hover .skill-extra,
+    .skill-card.active .skill-extra {
+      max-height: 180px;
+      opacity: 1;
+      margin-top: 12px;
+    }
+
+    .skill-extra strong {
+      color: var(--gold-dark);
+      font-size: 12px;
+    }
+
+    .compare-sticky {
+      position: sticky;
+      top: 20px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .compare-sticky-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 24px 0;
+    }
+
+    .compare-sticky h3 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .compare-sticky p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .mini-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mini-nav button {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .mini-nav button:hover {
+      border-color: rgba(18, 58, 111, 0.3);
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .compare-body {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .compare-box {
+      min-height: 280px;
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .compare-box.after {
+      border-color: rgba(176, 138, 60, 0.36);
+      background: #fffdf8;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .compare-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .compare-label span {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #f1f5f9;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .compare-box.after .compare-label { color: var(--gold-dark); }
+    .compare-box.after .compare-label span {
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .compare-sample {
+      margin-bottom: 18px;
+      padding: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+
+    .compare-box.after .compare-sample {
+      border-color: var(--gold-line);
+      background: #fffaf0;
+    }
+
+    .sample-kicker {
+      margin-bottom: 8px;
+      color: var(--subtle);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .compare-box.after .sample-kicker { color: var(--gold-dark); }
+
+    .compare-sample p {
+      margin: 0;
+      color: #334155;
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .compare-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #475569;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .compare-list li::before {
+      content: "×";
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      flex: none;
+      margin-top: 2px;
+      background: #fef2f2;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .compare-box.after .compare-list li::before {
+      content: "✓";
+      background: var(--gold-soft);
+      color: var(--gold-dark);
+    }
+
+    .vs-badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: var(--blue-dark);
+      font-family: Georgia, serif;
+      font-weight: 900;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(7, 31, 61, 0.12);
+    }
+
+    .current-skill {
+      padding: 16px 24px 24px;
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .current-skill strong { color: var(--text); }
+
+    .task-step-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1fr;
+      gap: 34px;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .task-button {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 74px;
+      padding: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
+      text-align: left;
+      transition: 0.2s ease;
+    }
+
+    .task-button:hover,
+    .task-button.active {
+      transform: translateY(-2px);
+      border-color: rgba(18, 58, 111, 0.35);
+      background: var(--blue-soft);
+    }
+
+    .task-button span {
+      width: 40px;
+      height: 40px;
+      flex: none;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #f1f5f9;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .task-button strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .task-button small {
+      display: block;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 12px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 180px;
+      padding: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
+      overflow: hidden;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 24px rgba(7, 31, 61, 0.16);
+    }
+
+    .step-card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .step-ghost {
+      position: absolute;
+      right: 18px;
+      bottom: 14px;
+      font-family: var(--font-display);
+      font-size: 46px;
+      opacity: 0.16;
+      color: var(--gold-dark);
+    }
+
+    .final-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 52px;
+      padding: 28px 30px;
+      border-radius: 16px;
+      border: 1px solid var(--gold-line);
+      background: #fffaf0;
+      box-shadow: 0 16px 42px rgba(176, 138, 60, 0.10);
+    }
+
+    .final-cta h2 {
+      margin: 0 0 8px;
+      color: var(--gold-dark);
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .final-cta p {
+      margin: 0;
+      color: #805c16;
+      line-height: 1.7;
+    }
+
+    .final-cta .btn {
+      flex: none;
+      background: var(--gold-dark);
+      color: white;
+      box-shadow: 0 16px 38px rgba(176, 138, 60, 0.2);
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .main-grid,
+      .task-step-grid { grid-template-columns: 1fr; }
+      .hero-demo,
+      .demo-columns { min-height: auto; }
+      .compare-sticky { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 30px, var(--container));
+        padding-top: 18px;
+      }
+      .nav {
+        height: auto;
+        align-items: flex-start;
+        margin-bottom: 28px;
+      }
+      .nav-links,
+      .nav-action { display: none; }
+      .hero { gap: 28px; }
+      .hero h1 { font-size: 44px; }
+      .hero-lead { font-size: 16px; }
+      .value-row,
+      .skills-grid,
+      .steps,
+      .task-grid,
+      .compare-body,
+      .demo-columns { grid-template-columns: 1fr; }
+      .demo-side.after {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+      .hero-arrow,
+      .vs-badge { display: none; }
+      .section-head,
+      .final-cta { display: block; }
+      .section-lead { margin-top: 10px; }
+      .final-cta .btn { margin-top: 20px; }
+    }
   </style>
 </head>
+
 <body>
-  <main>
-    <section class="hero">
-      <h1>CG Open Skills 国内镜像</h1>
-      <p>这是 <code>cg-open-skills</code> 的国内下载镜像。GitHub 是主仓库，这里只提供稳定下载入口。</p>
-      <p>当前版本：<strong>v0.1.1</strong>，包含 12 个公开脱敏版 Skill。</p>
-      <a class="primary" href="/cg-open-skills/cg-open-skills-v0.1.1.zip">下载全部 Skill</a>
+  <main class="page">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#">
+        <span class="brand-mark">✦</span>
+        <span>陈庚 AI 开源</span>
+      </a>
+
+      <div class="nav-links">
+        <a class="active" href="#hero">首页</a>
+        <a href="#skills">精选 Skill</a>
+        <a href="#comparison">效果对比</a>
+        <a href="#choose">按任务选择</a>
+        <a href="#steps">使用指南</a>
+      </div>
+
+      <a class="nav-action" href="#skills">探索 Skill →</a>
+    </nav>
+
+    <section class="hero fade-up" id="hero">
+      <div>
+        <div class="eyebrow">✦ 12 个公开脱敏版 Agent Skills</div>
+        <h1>让每个 Agent 都拥有 <span>专业能力</span></h1>
+        <p class="hero-lead">
+          通过 Skill，把稳定的方法、流程、模板和执行标准交给 AI。
+          它不再每次从零开始，而是按照你的标准完成内容、诊断、纪要、调研和知识处理任务。
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="/cg-open-skills/cg-open-skills-v0.1.1.zip">下载全部 Skill →</a>
+          <a class="btn secondary" href="#comparison">查看使用前后对比</a>
+        </div>
+
+        <div class="value-row" aria-label="核心价值">
+          <div class="value-item">
+            <span class="value-icon">▣</span>
+            <div>
+              <div class="value-title">流程沉淀</div>
+              <div class="value-sub">把经验变成可复用标准</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">✓</span>
+            <div>
+              <div class="value-title">稳定输出</div>
+              <div class="value-sub">减少每次重新调教成本</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">↯</span>
+            <div>
+              <div class="value-title">可交付结果</div>
+              <div class="value-sub">从回答走向工作流交付</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-demo" aria-label="首屏使用前后对比">
+        <div class="demo-columns">
+          <div class="demo-side before">
+            <div class="demo-title"><small>×</small> 没有 Skill</div>
+            <div class="prompt-chip">帮我整理一下这段材料</div>
+            <div class="output-card">
+              直接生成一段看起来完整的总结，但事实、判断、待确认问题和下一步动作混在一起。
+            </div>
+            <div class="quality-tag">可读，但不稳定</div>
+          </div>
+
+          <div class="demo-side after">
+            <div class="demo-title"><small>✓</small> 使用 Skill 后</div>
+            <div class="enabled-chip">结构化工作流已启用</div>
+            <div class="output-card">
+              先识别资料类型，再拆事实、解释、限制和动作。最后输出能复用、能检查、能继续交付的结构。
+            </div>
+            <div class="quality-tag">清楚、专业、可交付</div>
+          </div>
+        </div>
+        <div class="hero-arrow">→</div>
+      </aside>
     </section>
 
-    <h2>单个 Skill 下载</h2>
-    <div class="grid">
-      <div class="item"><strong>insurance-private-domain-moments</strong><a href="/cg-open-skills/single/insurance-private-domain-moments-v0.1.1.zip">下载朋友圈 Skill</a></div>
-      <div class="item"><strong>wechat-article-chain-lite</strong><a href="/cg-open-skills/single/wechat-article-chain-lite-v0.1.1.zip">下载长文链条 Lite</a></div>
-      <div class="item"><strong>cg-content-diagnosis-public</strong><a href="/cg-open-skills/single/cg-content-diagnosis-public-v0.1.1.zip">下载内容诊断</a></div>
-      <div class="item"><strong>cg-ai-check-public</strong><a href="/cg-open-skills/single/cg-ai-check-public-v0.1.1.zip">下载 AI Check</a></div>
-      <div class="item"><strong>cg-business-diagnosis-lite</strong><a href="/cg-open-skills/single/cg-business-diagnosis-lite-v0.1.1.zip">下载商业诊断 Lite</a></div>
-      <div class="item"><strong>cg-problem-dissolver</strong><a href="/cg-open-skills/single/cg-problem-dissolver-v0.1.1.zip">下载问题消解</a></div>
-      <div class="item"><strong>business-insight-public</strong><a href="/cg-open-skills/single/business-insight-public-v0.1.1.zip">下载商业灵感记录</a></div>
-      <div class="item"><strong>meeting-notes</strong><a href="/cg-open-skills/single/meeting-notes-v0.1.1.zip">下载会议纪要</a></div>
-      <div class="item"><strong>client-meeting-notes-public</strong><a href="/cg-open-skills/single/client-meeting-notes-public-v0.1.1.zip">下载客户面谈纪要</a></div>
-      <div class="item"><strong>kb-processor</strong><a href="/cg-open-skills/single/kb-processor-v0.1.1.zip">下载知识库处理</a></div>
-      <div class="item"><strong>deep-research-public</strong><a href="/cg-open-skills/single/deep-research-public-v0.1.1.zip">下载深度调研</a></div>
-      <div class="item"><strong>write-article-public</strong><a href="/cg-open-skills/single/write-article-public-v0.1.1.zip">下载长文写作</a></div>
-    </div>
+    <section class="section" id="skills">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">✦ Featured Skills</div>
+          <h2>精选 Skill</h2>
+        </div>
+        <p class="section-lead">
+          这里不是简单文件列表。每个 Skill 都说明它解决什么问题、适合什么场景，以及使用前后的结果差异。
+        </p>
+      </div>
 
-    <h2>说明文件</h2>
-    <p><a href="/cg-open-skills/manifest.json">manifest.json</a> 记录版本与文件清单；<a href="/cg-open-skills/SHA256SUMS.txt">SHA256SUMS.txt</a> 用于校验下载文件。</p>
-    <p>GitHub 主仓库：<a href="https://github.com/lumierechen626-cell/cg-open-skills">https://github.com/lumierechen626-cell/cg-open-skills</a></p>
+      <div class="filter-row" aria-label="Skill 分类">
+        <button class="filter-btn active" type="button" data-filter="all">全部</button>
+        <button class="filter-btn" type="button" data-filter="content">内容诊断</button>
+        <button class="filter-btn" type="button" data-filter="business">商业问题</button>
+        <button class="filter-btn" type="button" data-filter="meeting">会议纪要</button>
+        <button class="filter-btn" type="button" data-filter="knowledge">知识处理</button>
+        <button class="filter-btn" type="button" data-filter="writing">长文写作</button>
+        <button class="filter-btn" type="button" data-filter="research">调研</button>
+      </div>
 
-    <h2>使用提醒</h2>
-    <p>公开版已经脱敏，不包含真实客户案例、私有素材库、本地路径、API Key、Token、Secret 或服务器配置。</p>
-    <p>下载后把对应目录复制到你的 Agent skills 目录，再根据自己的业务替换 <code>{你的品牌}</code>、<code>{你的行业}</code>、<code>{你的用户}</code>。</p>
+      <div class="main-grid">
+        <div class="skills-grid" id="skills-grid" aria-label="Skill 卡片列表"></div>
+
+        <aside class="compare-sticky" id="comparison" aria-label="效果对比">
+          <div class="compare-sticky-head">
+            <div>
+              <h3>效果对比</h3>
+              <p>选择左侧 Skill，查看使用前后的结果差异。</p>
+            </div>
+            <div class="mini-nav">
+              <button type="button" id="prev-skill" aria-label="上一个 Skill">‹</button>
+              <button type="button" id="next-skill" aria-label="下一个 Skill">›</button>
+            </div>
+          </div>
+
+          <div class="compare-body">
+            <div class="compare-box before">
+              <div class="compare-label"><span>×</span> 使用前</div>
+              <div class="compare-sample">
+                <div class="sample-kicker">普通 AI 输出示例</div>
+                <p id="before-sample"></p>
+              </div>
+              <ul class="compare-list" id="before-list"></ul>
+            </div>
+
+            <div class="compare-box after">
+              <div class="compare-label"><span>✓</span> 使用后</div>
+              <div class="compare-sample">
+                <div class="sample-kicker">调用 Skill 后输出示例</div>
+                <p id="after-sample"></p>
+              </div>
+              <ul class="compare-list" id="after-list"></ul>
+            </div>
+
+            <div class="vs-badge">VS</div>
+          </div>
+
+          <div class="current-skill">
+            当前查看：<strong id="current-skill-name"></strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="choose">
+      <div class="task-step-grid">
+        <div>
+          <div class="section-head" style="display:block; margin-bottom:18px;">
+            <div class="section-kicker">✦ Choose by Task</div>
+            <h2>不知道用哪个 Skill？</h2>
+            <p class="section-lead" style="margin-top:10px;">选择你手上的任务，页面会切到对应 Skill 的效果对比。</p>
+          </div>
+
+          <div class="task-grid" id="task-grid">
+            <button class="task-button" type="button" data-target="cg-ai-check-public">
+              <span>AI</span>
+              <div>
+                <strong>我要检查 AI 味</strong>
+                <small>适合发布前检查解释腔、套路感和过度光滑。</small>
+              </div>
+            </button>
+
+            <button class="task-button" type="button" data-target="cg-business-diagnosis-lite">
+              <span>Biz</span>
+              <div>
+                <strong>我要拆商业问题</strong>
+                <small>适合先判断问题是否成立，再拆假设和因果。</small>
+              </div>
+            </button>
+
+            <button class="task-button" type="button" data-target="wechat-article-chain-lite">
+              <span>Doc</span>
+              <div>
+                <strong>我要做公众号长文</strong>
+                <small>适合从选题、调研、写作到发布前检查。</small>
+              </div>
+            </button>
+
+            <button class="task-button" type="button" data-target="meeting-notes">
+              <span>Meet</span>
+              <div>
+                <strong>我要整理会议材料</strong>
+                <small>适合把会议文本整理成纪要和行动清单。</small>
+              </div>
+            </button>
+
+            <button class="task-button" type="button" data-target="kb-processor">
+              <span>KB</span>
+              <div>
+                <strong>我要处理资料</strong>
+                <small>适合把 PDF、截图、转写稿整理成知识库。</small>
+              </div>
+            </button>
+
+            <button class="task-button" type="button" data-target="deep-research-public">
+              <span>R</span>
+              <div>
+                <strong>我要做深度调研</strong>
+                <small>适合事实核查、行业扫描和证据池搭建。</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div id="steps">
+          <div class="section-head" style="display:block; margin-bottom:18px;">
+            <div class="section-kicker">✦ How It Works</div>
+            <h2>如何使用 Skill</h2>
+            <p class="section-lead" style="margin-top:10px;">下载后复制到你的 Agent skills 目录，再按自己的业务替换占位信息。</p>
+          </div>
+
+          <div class="steps">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <h3>下载 Skill</h3>
+              <p>可以下载全部，也可以只下载一个你正在用的 Skill。</p>
+              <div class="step-ghost">01</div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <h3>放进 skills 目录</h3>
+              <p>把对应目录复制到 Agent / Codex / Claude / Hermes 的 skills 目录。</p>
+              <div class="step-ghost">02</div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <h3>替换你的业务信息</h3>
+              <p>把品牌、行业、用户等占位符替换成你的真实业务语境。</p>
+              <div class="step-ghost">03</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div>
+        <h2>把流程交给 Agent，把判断留给你</h2>
+        <p>
+          当前版本：v0.1.1。公开版已经脱敏，不包含真实客户案例、私有素材库、本地路径、API Key、Token、Secret 或服务器配置。
+        </p>
+        <p style="margin-top:8px;">
+          <a href="/cg-open-skills/manifest.json">manifest.json</a> ·
+          <a href="/cg-open-skills/SHA256SUMS.txt">SHA256SUMS.txt</a> ·
+          <a href="https://github.com/lumierechen626-cell/cg-open-skills">GitHub 主仓库</a>
+        </p>
+      </div>
+      <a class="btn" href="/cg-open-skills/cg-open-skills-v0.1.1.zip">下载全部 Skill →</a>
+    </section>
 
     <footer>
       CG Open Skills v0.1.1 · Mirror synced from GitHub release files.
     </footer>
   </main>
+
+  <script>
+    const skills = [
+      {
+        id: "insurance-private-domain-moments",
+        title: "朋友圈内容 Skill",
+        code: "insurance-private-domain-moments",
+        icon: "01",
+        category: "content",
+        tier: "拳头候选",
+        summary: "把真实素材写成能发、能看、能建立信任的私域内容。",
+        tags: ["私域内容", "保险人", "顾问"],
+        download: "/cg-open-skills/single/insurance-private-domain-moments-v0.1.1.zip",
+        beforeSample: "今天学习了一个很好的保险理念：风险管理很重要。希望大家都能提前规划，给自己和家人一份保障。",
+        afterSample: "今天客户问我：‘我现在身体还好，为什么要现在看保险？’ 我没有直接讲产品，而是先帮他把未来 3 年最可能出现的家庭现金流风险列出来。保险不是制造焦虑，是把已经存在的风险放到桌面上。",
+        before: [
+          "想到什么发什么，内容缺少业务角色判断",
+          "容易写成产品宣传、鸡汤感悟或 AI 模板文",
+          "真实素材没有变成客户能感知的关系和信任"
+        ],
+        after: [
+          "先判断素材属于 B 端交付、C 端咨询还是价值圈",
+          "把素材写成有场景、有关系感、有业务承接的内容",
+          "适合沉淀交付记录、客户反馈和专业信任感"
+        ]
+      },
+      {
+        id: "wechat-article-chain-lite",
+        title: "公众号长文链条 Lite",
+        code: "wechat-article-chain-lite",
+        icon: "02",
+        category: "writing",
+        tier: "拳头候选",
+        summary: "从选题、诊断、调研、写作到发布前检查的一条轻量长文链。",
+        tags: ["长文", "公众号", "发布前检查"],
+        download: "/cg-open-skills/single/wechat-article-chain-lite-v0.1.1.zip",
+        beforeSample: "直接写一篇《普通人为什么要重视长期主义》，文章有观点，但段落之间像素材拼接，结尾也只能回到‘坚持很重要’。",
+        afterSample: "先判断选题能不能成立：读者是谁、现实冲突是什么、要解决哪个误区。再补 3 类材料：案例、反例和可执行判断标准，最后进入大纲、初稿、精修和发布前检查。",
+        before: [
+          "直接开始写，写到一半发现主线散",
+          "标题、证据和正文经常不是一件事",
+          "写完后还要反复补材料、改结构和查 AI 味"
+        ],
+        after: [
+          "先判断选题是否成立，再补材料和搭主线",
+          "按选题、调研、写作、精修、发布前检查推进",
+          "更适合从一个想法稳定走到发布态长文"
+        ]
+      },
+      {
+        id: "cg-content-diagnosis-public",
+        title: "内容诊断 Skill",
+        code: "cg-content-diagnosis-public",
+        icon: "03",
+        category: "content",
+        tier: "核心工具",
+        summary: "判断选题、文案或内容想法该不该做、怎么做、哪里会写空。",
+        tags: ["选题判断", "文案诊断", "内容策略"],
+        download: "/cg-open-skills/single/cg-content-diagnosis-public-v0.1.1.zip",
+        beforeSample: "这个选题不错，可以从痛点、解决方案、案例和行动建议 4 个方面展开，最后呼吁大家关注长期价值。",
+        afterSample: "这个选题现在最大的问题不是角度，而是读者没有被具体化。建议先限定给‘刚转型做顾问，但内容没人看的人’，再把矛盾改成：明明很专业，为什么客户看不懂也不想问。",
+        before: [
+          "看到一个想法就做，做完才发现读者不关心",
+          "只有观点，没有场景、证据和承接",
+          "不知道选题适合图文、短视频、长文还是直播"
+        ],
+        after: [
+          "从读者、矛盾、证据、形式和承接判断内容是否成立",
+          "提前识别最容易写空的位置",
+          "明确下一步应该补什么材料、做什么形式"
+        ]
+      },
+      {
+        id: "cg-ai-check-public",
+        title: "AI Check Skill",
+        code: "cg-ai-check-public",
+        icon: "04",
+        category: "content",
+        tier: "拳头候选",
+        summary: "检查文案里的 AI 味、解释腔、套路感和过度光滑。",
+        tags: ["AI 味", "文风检查", "发布前"],
+        download: "/cg-open-skills/single/cg-ai-check-public-v0.1.1.zip",
+        beforeSample: "整体表达清晰，逻辑完整，建议进一步增强故事性和感染力，让语言更加自然、有温度。",
+        afterSample: "第 2 段的‘通过系统化的方法论赋能个体成长’是典型解释腔。可以改成：‘你不是不会做，是每次开始前都要重新想一遍，所以很累。’ 先改这种句子，再处理结尾升华。",
+        before: [
+          "文字看起来正确、完整、顺滑，但像模板",
+          "解释腔、讲义腔和空泛连接词藏在句子里",
+          "结尾容易强行升华，读者觉得不是真人表达"
+        ],
+        after: [
+          "指出具体问题句，不只说“像 AI”",
+          "区分解释腔、套路排比、过度光滑和发布态问题",
+          "给出更自然、更像真人表达的修改方向"
+        ]
+      },
+      {
+        id: "cg-business-diagnosis-lite",
+        title: "商业诊断 Lite",
+        code: "cg-business-diagnosis-lite",
+        icon: "05",
+        category: "business",
+        tier: "拳头候选",
+        summary: "先判断商业问题是否成立，再拆假设、因果和信息缺口。",
+        tags: ["商业问题", "问诊", "假设校正"],
+        download: "/cg-open-skills/single/cg-business-diagnosis-lite-v0.1.1.zip",
+        beforeSample: "建议你先明确目标用户，优化产品定位，再通过内容营销、私域运营和社群转化来提升获客效率。",
+        afterSample: "先别急着问‘怎么获客’。这个问题里有 3 个未验证假设：你已有明确产品、用户知道自己需要它、成交阻力主要在流量。先补一组信息：现在谁愿意付费、为什么犹豫、成交发生在哪个场景。",
+        before: [
+          "一上来就问怎么获客、怎么定价、要不要做",
+          "得到很多听起来有道理但无法验证的建议",
+          "关键词、默认假设和错误因果没有被拆开"
+        ],
+        after: [
+          "先保留原问题，再判断问题是否成立",
+          "拆关键词、隐含假设、错误因果和信息缺口",
+          "把问题改成可讨论、可验证、可继续推进的版本"
+        ]
+      },
+      {
+        id: "cg-problem-dissolver",
+        title: "问题消解 Skill",
+        code: "cg-problem-dissolver",
+        icon: "06",
+        category: "business",
+        tier: "核心工具",
+        summary: "把模糊、焦虑、抽象或伪选择问题改写成可验证问题。",
+        tags: ["问题澄清", "决策前", "最小行动"],
+        download: "/cg-open-skills/single/cg-problem-dissolver-v0.1.1.zip",
+        beforeSample: "如果你不确定要不要换方向，可以列出优缺点，结合长期目标、资源和兴趣做一个综合判断。",
+        afterSample: "‘要不要换方向’太大。先拆成一个可验证问题：未来 14 天，你能否在不放弃主线的情况下，用 3 次真实对话验证新方向有没有明确付费需求。验证完再谈换不换。",
+        before: [
+          "问题越想越大，卡在适不适合、值不值得、要不要换方向",
+          "情绪、事实和判断混在一起",
+          "无法得到下一步能被现实验证的动作"
+        ],
+        after: [
+          "识别情绪问题、伪问题、信息缺口和错误单位",
+          "把抽象问题改写成能验证的小问题",
+          "给出下一步最小行动，而不是输出一篇大道理"
+        ]
+      },
+      {
+        id: "business-insight-public",
+        title: "商业灵感记录 Skill",
+        code: "business-insight-public",
+        icon: "07",
+        category: "business",
+        tier: "Beta 工具",
+        summary: "把零散商业想法整理成可追踪、可讨论、可验证的洞察记录。",
+        tags: ["灵感记录", "商业假设", "复盘"],
+        download: "/cg-open-skills/single/business-insight-public-v0.1.1.zip",
+        beforeSample: "这个想法不错，可以考虑做成一个面向知识工作者的效率工具，后续可以结合 AI 能力提高用户体验。",
+        afterSample: "原始灵感：‘很多顾问其实缺的不是工具，是有人帮他把想法落到业务动作。’ 可能用户：转型期顾问。收费假设：诊断 + 模板 + 陪跑。待验证：他们是否愿意为‘降低决策混乱’付费。",
+        before: [
+          "灵感散落在聊天、备忘录和脑子里",
+          "当时觉得重要，过几天找不到来源和上下文",
+          "想法没有变成可验证假设"
+        ],
+        after: [
+          "记录灵感原话、来源、目标用户和可能产品",
+          "整理收费方式、验证假设和后续讨论点",
+          "方便后续复盘、筛选和继续推进"
+        ]
+      },
+      {
+        id: "meeting-notes",
+        title: "会议纪要 Skill",
+        code: "meeting-notes",
+        icon: "08",
+        category: "meeting",
+        tier: "核心工具",
+        summary: "把会议文本、转写稿或零散笔记整理成纪要、决策和行动清单。",
+        tags: ["会议纪要", "行动清单", "团队同步"],
+        download: "/cg-open-skills/single/meeting-notes-v0.1.1.zip",
+        beforeSample: "本次会议主要讨论了产品上线、内容计划和客户反馈。大家认为要继续优化体验，并在下周推进相关工作。",
+        afterSample: "会议结论：本周先上线下载页，不等完整官网。待确认：版本号和校验文件是否同步。行动项：A 负责文案，周三前；B 负责发布包，周四前；C 负责回归检查，发布前完成。",
+        before: [
+          "会议内容只剩一堆原话和碎片",
+          "事实、决策、待确认问题和行动项混在一起",
+          "谁负责什么、什么时候完成不清楚"
+        ],
+        after: [
+          "先识别会议主题、参与人和材料完整度",
+          "区分事实、决策、待确认问题和行动项",
+          "按受众整理出可发送、可追踪的纪要版本"
+        ]
+      },
+      {
+        id: "client-meeting-notes-public",
+        title: "客户面谈纪要 Skill",
+        code: "client-meeting-notes-public",
+        icon: "09",
+        category: "meeting",
+        tier: "核心工具",
+        summary: "把客户沟通记录整理成客户画像、需求、顾虑和下一步动作。",
+        tags: ["客户沟通", "需求访谈", "跟进"],
+        download: "/cg-open-skills/single/client-meeting-notes-public-v0.1.1.zip",
+        beforeSample: "客户比较关注保障，也提到预算问题。后续可以继续沟通产品方案，重点强调保障全面和性价比。",
+        afterSample: "客户画像：35 岁，家庭责任上升，主要担心收入中断。真实顾虑不是价格，而是不确定买了以后有没有用。下一步：先补一张家庭责任缺口表，再约 20 分钟解释方案边界。",
+        before: [
+          "聊完客户只记得几个关键词",
+          "真实需求、主要顾虑和成交阻力容易漏掉",
+          "后续跟进没有清晰依据"
+        ],
+        after: [
+          "提取客户基本情况、当前关注点和需求层级",
+          "整理主要顾虑、待确认问题和下一步动作",
+          "让咨询、方案讲解和回访都有记录可依"
+        ]
+      },
+      {
+        id: "kb-processor",
+        title: "知识库处理 Skill",
+        code: "kb-processor",
+        icon: "10",
+        category: "knowledge",
+        tier: "核心工具",
+        summary: "把 PDF、截图、录音转写、课程资料整理成结构化知识。",
+        tags: ["知识库", "资料整理", "结构化"],
+        download: "/cg-open-skills/single/kb-processor-v0.1.1.zip",
+        beforeSample: "这份资料主要讲了客户经营、内容发布和成交转化，整体上可以总结为提升专业度、稳定输出和持续跟进。",
+        afterSample: "资料类型：课程转写稿。可沉淀为 4 个知识块：客户分层、触达节奏、内容素材、成交复盘。每块拆成事实、适用条件、操作步骤和禁用边界，方便后续检索和复用。",
+        before: [
+          "资料很多，但只是堆在文件夹里",
+          "检索难、复用难，也很难讲给别人听",
+          "事实、解释、限制和动作没有分层"
+        ],
+        after: [
+          "先识别资料类型、来源形式和最终用途",
+          "提取关键信息并区分事实、解释、限制和动作",
+          "整理成可检索、可复用、可讲解的知识结构"
+        ]
+      },
+      {
+        id: "deep-research-public",
+        title: "深度调研 Skill",
+        code: "deep-research-public",
+        icon: "11",
+        category: "research",
+        tier: "Beta 工具",
+        summary: "围绕一个主题搭建证据池、核查事实，并输出可引用的调研报告。",
+        tags: ["调研", "事实核查", "证据池"],
+        download: "/cg-open-skills/single/deep-research-public-v0.1.1.zip",
+        beforeSample: "根据公开资料，AI Agent 正在快速发展，未来会对知识工作产生深远影响，企业应该提前布局相关能力。",
+        afterSample: "先把问题改成可查版本：2025 年以后，AI Agent 在企业知识管理中的真实落地阻力是什么？证据池分 3 层：厂商报告、客户案例、失败案例。结论只写证据能支撑的部分，争议单独标注。",
+        before: [
+          "搜索很多页面，复制很多材料",
+          "不知道哪些可信、哪些能支撑结论",
+          "主题没有被改写成可查问题"
+        ],
+        after: [
+          "先判断是事实核查、行业扫描、竞品分析还是决策支持",
+          "围绕问题搭建证据池并核查关键事实",
+          "输出可引用、可追溯、可继续写作的调研结果"
+        ]
+      },
+      {
+        id: "write-article-public",
+        title: "长文写作 Skill",
+        code: "write-article-public",
+        icon: "12",
+        category: "writing",
+        tier: "核心工具",
+        summary: "把选题、材料、观点和调研整理成一篇结构清楚的深度文章。",
+        tags: ["长文写作", "观点文", "材料整理"],
+        download: "/cg-open-skills/single/write-article-public-v0.1.1.zip",
+        beforeSample: "本文将从背景、问题、原因和解决方案 4 个部分展开，说明为什么个人品牌越来越重要，以及普通人如何打造个人品牌。",
+        afterSample: "先定中心问题：为什么很多人做个人品牌，最后变成持续表演？文章主线不是教方法，而是拆误区：表达欲、业务承接、信任资产分别是什么，再用 2 个案例说明边界。",
+        before: [
+          "有观点、有材料，但组织不起来",
+          "正文容易变成资料堆砌或观点散打",
+          "文章缺少清楚的问题和推进"
+        ],
+        after: [
+          "先做材料盘点，区分观点、事实、案例、数据和缺口",
+          "建立主线、安排结构、写正文并修改",
+          "更适合单篇深度文章、观点文和公众号长文"
+        ]
+      }
+    ];
+
+    const skillGrid = document.getElementById("skills-grid");
+    const beforeSample = document.getElementById("before-sample");
+    const afterSample = document.getElementById("after-sample");
+    const beforeList = document.getElementById("before-list");
+    const afterList = document.getElementById("after-list");
+    const currentSkillName = document.getElementById("current-skill-name");
+    const taskButtons = [...document.querySelectorAll(".task-button")];
+    const filterButtons = [...document.querySelectorAll(".filter-btn")];
+
+    let selectedId = skills[0].id;
+    let activeFilter = "all";
+
+    function getVisibleSkills() {
+      return activeFilter === "all" ? skills : skills.filter(skill => skill.category === activeFilter);
+    }
+
+    function getSelectedSkill() {
+      return skills.find(skill => skill.id === selectedId) || skills[0];
+    }
+
+    function renderSkills() {
+      const visibleSkills = getVisibleSkills();
+
+      skillGrid.innerHTML = visibleSkills.map(skill => `
+        <article class="skill-card ${skill.id === selectedId ? "active" : ""}" data-id="${skill.id}">
+          <span class="checkmark">✓</span>
+          <div class="skill-top">
+            <div class="skill-icon">${skill.icon}</div>
+            <h3 class="skill-title">${skill.title}</h3>
+            <p class="skill-code">${skill.code} · ${skill.tier}</p>
+            <p class="skill-summary">${skill.summary}</p>
+            <div class="tag-row">
+              ${skill.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+            </div>
+            <div class="skill-extra">
+              <div><strong>使用前：</strong>${skill.before[0]}</div>
+              <div><strong>使用后：</strong>${skill.after[0]}</div>
+            </div>
+          </div>
+          <div class="skill-actions">
+            <button class="card-action" type="button" data-id="${skill.id}">查看效果对比 →</button>
+            <a class="download-link" href="${skill.download}" onclick="event.stopPropagation()">下载 / 启用</a>
+          </div>
+        </article>
+      `).join("");
+
+      [...skillGrid.querySelectorAll(".skill-card")].forEach(card => {
+        card.addEventListener("click", () => {
+          selectSkill(card.dataset.id, true);
+        });
+      });
+    }
+
+    function renderComparison() {
+      const skill = getSelectedSkill();
+
+      beforeSample.textContent = skill.beforeSample;
+      afterSample.textContent = skill.afterSample;
+      beforeList.innerHTML = skill.before.map(item => `<li>${item}</li>`).join("");
+      afterList.innerHTML = skill.after.map(item => `<li>${item}</li>`).join("");
+      currentSkillName.textContent = `${skill.title} · ${skill.code}`;
+
+      [...document.querySelectorAll(".skill-card")].forEach(card => {
+        card.classList.toggle("active", card.dataset.id === selectedId);
+      });
+
+      taskButtons.forEach(button => {
+        button.classList.toggle("active", button.dataset.target === selectedId);
+      });
+    }
+
+    function selectSkill(id, shouldScroll = false) {
+      selectedId = id;
+      const selected = getSelectedSkill();
+
+      if (activeFilter !== "all" && selected.category !== activeFilter) {
+        activeFilter = "all";
+        filterButtons.forEach(button => {
+          button.classList.toggle("active", button.dataset.filter === "all");
+        });
+        renderSkills();
+      }
+
+      renderComparison();
+
+      if (shouldScroll) {
+        document.getElementById("comparison").scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+
+    function moveSkill(direction) {
+      const index = skills.findIndex(skill => skill.id === selectedId);
+      const nextIndex = (index + direction + skills.length) % skills.length;
+      selectSkill(skills[nextIndex].id, false);
+    }
+
+    document.getElementById("prev-skill").addEventListener("click", () => moveSkill(-1));
+    document.getElementById("next-skill").addEventListener("click", () => moveSkill(1));
+
+    taskButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        selectSkill(button.dataset.target, true);
+      });
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach(item => item.classList.toggle("active", item === button));
+
+        const visible = getVisibleSkills();
+        if (!visible.some(skill => skill.id === selectedId)) {
+          selectedId = visible[0]?.id || skills[0].id;
+        }
+
+        renderSkills();
+        renderComparison();
+      });
+    });
+
+    renderSkills();
+    renderComparison();
+  </script>
 </body>
 </html>
